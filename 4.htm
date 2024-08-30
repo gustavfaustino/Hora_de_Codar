@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- Made By GustavG -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculos super complexos com JS</title>
+  <!-- Sessão de links -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+  <!-- Seção de ESTILO -->
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="number"] /* utilização do type number para mostrar ao usuario que deve-se digitar somente números */ {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    #container-resultado {
+      display: none;
+    }
+  </style>
+  <!-- Chamada do JS -->
+  <script src="4JS.js"></script>
+</head>
+<!-- Inicio do Body -->
+
+<!-- Nesse exercício aqui eu me ferrei, foram horas e horas ( aprox. 8h ) procurando gambiarras e lendo docs para concluir. Enfim, funciona bem -->
+<body>
+  <main class="container">
+    <div class="row">
+      <div class="col-sm">
+        <p>
+          Considerando a figura abaixo, escreva um programa para cada forma
+          que calcule e exiba em tela cada uma de suas respectivas áreas. O
+          usuário irá informar os valores de cada variável
+        </p>
+
+        <img src="Untitled.png" alt="Como calcular a base de diversas formas geométricas" />
+      </div>
+      <div class="card col-sm">
+
+        <h1>Calculadora de Área</h1>
+        <div class="form-group">
+          <label for="figura">Selecione a figura geométrica:</label>
+          <select id="figura" onchange="mostrarCampos()">
+            <option value="">Selecione...</option>
+            <option value="retangulo">Retângulo</option>
+            <option value="quadrado">Quadrado</option>
+            <option value="losango">Losango</option>
+            <option value="trapezio">Trapézio</option>
+            <option value="paralelograma">Paralelograma</option>
+            <option value="triangulo">Triângulo</option>
+            <option value="circulo">Círculo</option>
+          </select>
+        </div>
+
+        <div id="campos">
+          <!-- Campos serão inseridos aqui dinamicamente -->
+        </div>
+
+        <button onclick="calcularArea()">Calcular</button>
+        <button onclick="limparCampos()">Limpar</button>
+
+        <div id="container-resultado">
+          <p id="resultado"></p>
+        </div>
+      </div>
+
+  </main>
+</body>
+
+</html>
